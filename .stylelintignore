@@ -1,0 +1,7 @@
+**/*.min.css
+**/dist/
+**/vendor/
+/_gh_pages/
+build/
+node_modules/**
+docs/**

@@ -1,0 +1,92 @@
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #e74c3c;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #ffffff;
+$light-gray: #ced4da;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$black: #aa7070;
+
+$light: #f8f9fa;
+$dark: #111111;
+
+$font-family-sans-serif: "SF Pro Display", -apple-system, blinkmacsystemfont, helvetica, roboto,
+  arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
+$font-family-monospace: fira code, sfmono-regular, menlo, monaco, consolas, "Liberation Mono",
+  "Courier New", monospace;
+
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1em !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.25 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$border: #80bdff;
+$primary: lighten($blue, 5%);
+$secondary: #6188e2;
+
+$base: $gray-dark;
+$input-border-focus: $border;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+$spacers: map-merge((
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer
+),
+$spacers);
+
+$border-width: 1px !default;
+$border-color: $light-gray !default;
+
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: null !default;
+$headings-font-style: null !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+// Code
+
+$code-font-size: 87.5% !default;
+$code-color: $red !default;

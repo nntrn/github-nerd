@@ -1,0 +1,366 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $spacers {
+
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+
+    .#{$abbrev}t-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+
+    .#{$abbrev}r-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+
+    .#{$abbrev}b-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+
+    .#{$abbrev}l-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .flex#{$infix}-row {
+      flex-direction: row !important;
+    }
+
+    .flex#{$infix}-column {
+      flex-direction: column !important;
+    }
+
+    .flex#{$infix}-row-reverse {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex#{$infix}-column-reverse {
+      flex-direction: column-reverse !important;
+    }
+
+    .flex#{$infix}-wrap {
+      flex-wrap: wrap !important;
+    }
+
+    .flex#{$infix}-nowrap {
+      flex-wrap: nowrap !important;
+    }
+
+
+    .flex#{$infix}-fill {
+      flex: 1 1 auto !important;
+    }
+
+    .flex#{$infix}-grow-0 {
+      flex-grow: 0 !important;
+    }
+
+    .flex#{$infix}-grow-1 {
+      flex-grow: 1 !important;
+    }
+
+    .flex#{$infix}-shrink-0 {
+      flex-shrink: 0 !important;
+    }
+
+    .flex#{$infix}-shrink-1 {
+      flex-shrink: 1 !important;
+    }
+
+    .justify-content#{$infix}-start {
+      justify-content: flex-start !important;
+    }
+
+    .justify-content#{$infix}-end {
+      justify-content: flex-end !important;
+    }
+
+    .justify-content#{$infix}-center {
+      justify-content: center !important;
+    }
+
+    .justify-content#{$infix}-between {
+      justify-content: space-between !important;
+    }
+
+    .justify-content#{$infix}-around {
+      justify-content: space-around !important;
+    }
+
+    .align-items#{$infix}-start {
+      align-items: flex-start !important;
+    }
+
+    .align-items#{$infix}-end {
+      align-items: flex-end !important;
+    }
+
+    .align-items#{$infix}-center {
+      align-items: center !important;
+    }
+
+    .align-items#{$infix}-baseline {
+      align-items: baseline !important;
+    }
+
+    .align-items#{$infix}-stretch {
+      align-items: stretch !important;
+    }
+
+    .align-content#{$infix}-start {
+      align-content: flex-start !important;
+    }
+
+    .align-content#{$infix}-end {
+      align-content: flex-end !important;
+    }
+
+    .align-content#{$infix}-center {
+      align-content: center !important;
+    }
+
+    .align-content#{$infix}-between {
+      align-content: space-between !important;
+    }
+
+    .align-content#{$infix}-around {
+      align-content: space-around !important;
+    }
+
+    .align-content#{$infix}-stretch {
+      align-content: stretch !important;
+    }
+
+    .align-self#{$infix}-auto {
+      align-self: auto !important;
+    }
+
+    .align-self#{$infix}-start {
+      align-self: flex-start !important;
+    }
+
+    .align-self#{$infix}-end {
+      align-self: flex-end !important;
+    }
+
+    .align-self#{$infix}-center {
+      align-self: center !important;
+    }
+
+    .align-self#{$infix}-baseline {
+      align-self: baseline !important;
+    }
+
+    .align-self#{$infix}-stretch {
+      align-self: stretch !important;
+    }
+  }
+}
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $value in $displays {
+
+      .d#{$infix}-#{$value} {
+        display: $value !important;
+      }
+    }
+  }
+}
+
+$btn-padding-y: 0.375rem !default;
+$btn-padding-x: 0.75rem !default;
+
+$btn-padding-y-sm: 0.25rem !default;
+$btn-padding-x-sm: 0.5rem !default;
+
+$btn-padding-y-lg: 0.5rem !default;
+$btn-padding-x-lg: 1rem !default;
+$btn-font-size-lg: $font-size-lg !default;
+
+$btn-border-width: $border-width !default;
+
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-focus-width: 0.2rem !default;
+$btn-focus-box-shadow: 0 0 0 0.2rem rgba($gray, 0.3) !default;
+$btn-disabled-opacity: 0.65 !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
+
+$btn-block-spacing-y: 0.5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius !default;
+$btn-border-radius-lg: $border-radius-lg !default;
+$btn-border-radius-sm: $border-radius-sm !default;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+.btn {
+  display: inline-block;
+  font-family: $font-family-base;
+  line-height: initial;
+  color: $primary;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  border-color: $primary;
+  border-radius: $btn-border-radius-sm;
+  transition: $btn-transition;
+
+  &:hover {
+    background-color: lighten($primary, 20%);
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+}
+
+$card-spacer-y: 0.75rem !default;
+$card-spacer-x: 1.25rem !default;
+$card-border-width: $border-width !default;
+$card-border-radius: $border-radius !default;
+$card-border-color: rgba($black, 0.125) !default;
+$card-color: null !default;
+$card-bg: $white !default;
+$card-footer-bg: $white;
+// $card-footer-bg: lighten($light-gray, 10%);
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  > .list-group:first-child {
+
+    .list-group-item:first-child {
+      @include border-top-radius($card-border-radius);
+    }
+  }
+
+  > .list-group:last-child {
+
+    .list-group-item:last-child {
+      @include border-bottom-radius($card-border-radius);
+    }
+  }
+}
+
+.card-header {
+  padding: $card-spacer-y/2 $card-spacer-x;
+  margin: 0; // Removes the default margin-bottom of <hN>
+  color: $white;
+  background-color: $primary;
+  border-bottom: 1px solid $border-color;
+}
+
+.card-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+  color: $card-color;
+}
+
+.card-title {
+  margin-bottom: $card-spacer-y;
+}
+
+.card-subtitle {
+  margin-top: -$card-spacer-y / 2;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link {
+  @include hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+.card-footer {
+  padding: $card-spacer-y $card-spacer-x;
+  background: $card-footer-bg;
+  @include border-bottom-radius($card-border-radius);
+}
+
+$list-group-color: null !default;
+$list-group-bg: $white !default;
+$list-group-border-color: rgba($black, 0.125) !default;
+$list-group-border-width: $border-width !default;
+$list-group-border-radius: $border-radius !default;
+$list-group-item-padding-y: 0.65rem !default;
+$list-group-item-padding-x: 1rem !default;
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0; // reset padding because ul and ol
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  margin-bottom: -$list-group-border-width;
+  color: $list-group-color;
+  background-color: $list-group-bg;
+  border: $list-group-border-width solid $list-group-border-color;
+
+  &:first-child {
+    @include border-top-radius($list-group-border-radius);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    @include border-bottom-radius($list-group-border-radius);
+  }
+
+  &:hover {
+    background-color: lighten(#dddddd, 10%);
+  }
+}

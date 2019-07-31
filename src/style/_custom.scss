@@ -1,0 +1,150 @@
+#user {
+
+  [label]:before {
+    content: attr(label) " ";
+    font-weight: bold;
+  }
+}
+
+[after]:after {
+  content: attr(after) !important;
+}
+
+.react-groups {
+  overflow-x: hidden;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.select {
+  position: relative;
+  box-sizing: border-box;
+  height: 36px;
+  overflow: hidden;
+  color: #333333;
+  cursor: default;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+::selection {
+  color: #ffffff;
+  background-color: #0070f3;
+}
+
+.dataviewer {
+  margin: 2rem 0;
+  background: rgba($primary, 0.2);
+
+  .viewer-body {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+
+    .viewer-item {
+      min-width: 30%;
+      white-space: pre-wrap;
+
+      .viewer-btn {
+        position: relative;
+
+        &:hover {
+
+          &:after {
+            content: attr(count);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: auto;
+            font-weight: bold;
+            color: $white;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    [label] {
+      position: relative;
+      display: inline;
+
+      &:after {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: 1;
+        padding: 0;
+        margin-left: -1px;
+        font-size: 0.85em;
+        line-height: 1;
+        color: #ffffff;
+        background-color: rgba($dark, 0.8);
+        border-color: transparent;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 2px;
+      }
+
+      &:hover {
+        color: $primary;
+
+        &:after {
+          content: attr(label);
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.h-300 {
+  max-height: 300px;
+}
+
+.h-300,
+.h-100,
+.h-200 {
+  overflow-y: scroll;
+}
+
+$widthpoints: (
+  "-max": max-width,
+  "-min": min-width,
+  "": width
+);
+
+$sizes: 25, 50, 75, 100;
+
+@each $value, $label in $widthpoints {
+  @each $size in $sizes {
+
+    .vw#{$value}-#{$size} {
+      #{$label}: #{$size}vw;
+    }
+  }
+}
+
+@media (max-width:768px) {
+
+  #user {
+
+    .border-bottom {
+      border-bottom: 1px solid $border;
+    }
+  }
+}
+
+.viewer-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.primary-before:before {
+  color: $primary;
+}
