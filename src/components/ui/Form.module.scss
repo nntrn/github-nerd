@@ -1,4 +1,4 @@
-@import "../../style/variables";
+@import '../../style/variables';
 
 form {
   font-size: 15pt;
@@ -37,11 +37,10 @@ form {
       color: $gray;
       background-color: #ffffff;
       border-color: $border;
-      box-shadow: inset 0 0 0 0.2rem rgba($border, 0.25);
+      box-shadow: inset 0 0 0 0.2rem rgba($gray, 0.25);
     }
 
     &:hover {
-
       svg {
         transition: 0.3s fill ease;
         fill: rgba($border, 0.75);

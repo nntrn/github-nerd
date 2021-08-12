@@ -1,4 +1,5 @@
 import React from 'react'
+
 export const search = (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <path fill="none" d="M0 0h24v24H0V0z" />
@@ -19,3 +20,16 @@ export const enter = (
     <path d="M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 0 0 0 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z"></path>
   </svg>
 )
+
+export const arrow = (
+  <svg
+    focusable="false"
+    data-icon="enter"
+    width="16px"
+    height="16px"
+    fill="currentColor"
+  >
+    <path d="M8 0a8 8 0 110 16A8 8 0 018 0zM4.5 7.5a.5.5 0 000 1h5.793l-2.147 2.146a.5.5 0 00.708.708l3-3a.5.5 0 000-.708l-3-3a.5.5 0 10-.708.708L10.293 7.5H4.5z"></path>
+  </svg>
+)
+

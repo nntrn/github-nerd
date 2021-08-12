@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Form.module.scss'
-import { enter as buttonSVG } from './svg'
+import { arrow as buttonSVG } from './svg'
 
 export default function Form(props) {
   const [value, setValue] = React.useState('')
@@ -36,17 +36,19 @@ export default function Form(props) {
         )
       })}
       {props.children}
-      <Button icon={buttonSVG} />
+      {/* <Button icon={buttonSVG} /> */}
     </form>
   )
 }
+
 Form.defaultProps = {
-  input: { name: { value: 'value', type: 'text' } }
+  input: { name: { value: 'value', type: 'text' }}
 }
 
 export function Input(props) {
   return <input {...props}>{props.children}</input>
 }
+
 Input.defaultProps = {
   type: 'text'
 }
@@ -54,6 +56,7 @@ Input.defaultProps = {
 export function Button(props) {
   return <button {...props}>{props.children || props.icon || props.submit}</button>
 }
+
 Button.defaultProps = {
   type: 'submit',
   submit: 'Submit'
