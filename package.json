@@ -13,7 +13,7 @@
   "scripts": {
     "clear-babel-cache": "rm -rf ./node_modules/.cache/babel-loader/*",
     "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
