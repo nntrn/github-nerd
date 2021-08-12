@@ -2,7 +2,7 @@ import React from 'react'
 import Api from '../data/Api'
 import userLinks from '../data/GitUrls'
 
-import ChartistGraph from 'react-chartist'
+// import ChartistGraph from 'react-chartist'
 
 import { createQueryParam } from '../utils/url'
 import { groupObjectArrays, getXY } from '../utils/chart'
@@ -40,10 +40,11 @@ export default function Events(props) {
         labelInterpolationFnc: label => label.toUpperCase().replace(/(REQUEST|EVENT|COMMENT)/g, '')
       }
     }
+
     return (
       <div className="mt-3 barchart">
         <h4>{data.title}</h4>
-        <ChartistGraph data={data} options={options} type="Bar" />
+        {/* <ChartistGraph data={data} options={options} type="Bar" /> */}
       </div>
     )
   }
