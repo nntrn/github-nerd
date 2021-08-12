@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/github-nerd/static/css/main.28208da7.chunk.css",
-    "main.js": "/github-nerd/static/js/main.0ca154d1.chunk.js",
-    "main.js.map": "/github-nerd/static/js/main.0ca154d1.chunk.js.map",
-    "runtime~main.js": "/github-nerd/static/js/runtime~main.9235becd.js",
-    "runtime~main.js.map": "/github-nerd/static/js/runtime~main.9235becd.js.map",
-    "static/js/2.3f748aae.chunk.js": "/github-nerd/static/js/2.3f748aae.chunk.js",
-    "static/js/2.3f748aae.chunk.js.map": "/github-nerd/static/js/2.3f748aae.chunk.js.map",
+    "main.css": "/github-nerd/static/css/main.2d4fc426.chunk.css",
+    "main.js": "/github-nerd/static/js/main.fe869da6.chunk.js",
+    "main.js.map": "/github-nerd/static/js/main.fe869da6.chunk.js.map",
+    "runtime-main.js": "/github-nerd/static/js/runtime-main.000c362f.js",
+    "runtime-main.js.map": "/github-nerd/static/js/runtime-main.000c362f.js.map",
+    "static/js/2.b1558d6c.chunk.js": "/github-nerd/static/js/2.b1558d6c.chunk.js",
+    "static/js/2.b1558d6c.chunk.js.map": "/github-nerd/static/js/2.b1558d6c.chunk.js.map",
     "index.html": "/github-nerd/index.html",
-    "precache-manifest.ccd52effbdeaa9464ffb63ad4ab45705.js": "/github-nerd/precache-manifest.ccd52effbdeaa9464ffb63ad4ab45705.js",
-    "service-worker.js": "/github-nerd/service-worker.js",
-    "static/css/main.28208da7.chunk.css.map": "/github-nerd/static/css/main.28208da7.chunk.css.map"
-  }
+    "static/css/main.2d4fc426.chunk.css.map": "/github-nerd/static/css/main.2d4fc426.chunk.css.map",
+    "static/js/2.b1558d6c.chunk.js.LICENSE.txt": "/github-nerd/static/js/2.b1558d6c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.000c362f.js",
+    "static/js/2.b1558d6c.chunk.js",
+    "static/css/main.2d4fc426.chunk.css",
+    "static/js/main.fe869da6.chunk.js"
+  ]
 }
