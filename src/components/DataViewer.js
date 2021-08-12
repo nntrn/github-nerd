@@ -7,11 +7,10 @@ import { groupObjectArrays } from '../utils/chart'
 export default function DataViewer(props) {
   const { user, api, query, columns } = props
   const url = userLinks(user)[api] + createQueryParam(query)
-
   const data = Api(url)
 
   // only include columns specified in props.columns
-  if (columns) {
+  if(columns) {
     let arr = []
     Object.values(data).forEach(item => {
       let obj = {}
@@ -46,7 +45,7 @@ export function DataOutput(props) {
     return label
   }
 
-  if (groupBy && viewer.keys.indexOf(groupBy)) {
+  if(groupBy && viewer.keys.indexOf(groupBy)) {
     viewer.data = groupObjectArrays(viewer.data, groupBy)
     viewer.xy = dataLabels(viewer.data)
   }
@@ -54,10 +53,10 @@ export function DataOutput(props) {
   return (
     Object.values(viewer.data).length > 0 && (
       <div className="dataviewer card" url={url}>
-        <h4 className="viewer-title card-header">{title || api}</h4>
+        <h3 className="viewer-title card-header">{title || api}</h3>
         <div className="viewer-body flex-column flex-md-row card-body">
           {viewer.xy && (
-            <div className="viewer-item groups pb-2 mr-2" groupby={groupBy}>
+            <div className="viewer-item groups pb-2" groupby={groupBy}>
               {groupBy && (
                 <div className="mb-2">
                   grouped by <code>{groupBy}</code>
@@ -70,7 +69,8 @@ export function DataOutput(props) {
                   value={e}
                   key={`${e}${viewer.xy[e]}`}
                 >
-                  {e}
+                  <span>{e}</span>
+                  <span className="number-label"> ({viewer.xy[e]})</span>
                 </button>
               ))}
             </div>

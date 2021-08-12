@@ -1,7 +1,6 @@
 #user {
-
   [label]:before {
-    content: attr(label) " ";
+    content: attr(label) ' ';
     font-weight: bold;
   }
 }
@@ -34,12 +33,12 @@
 
 ::selection {
   color: #ffffff;
-  background-color: #0070f3;
+  background-color: $blue;
 }
 
 .dataviewer {
   margin: 2rem 0;
-  background: rgba($primary, 0.2);
+  // background: rgba($primary, 0.2);
 
   .viewer-body {
     display: flex;
@@ -52,21 +51,6 @@
 
       .viewer-btn {
         position: relative;
-
-        &:hover {
-
-          &:after {
-            content: attr(count);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            margin: auto;
-            font-weight: bold;
-            color: $white;
-            text-align: center;
-          }
-        }
       }
     }
 
@@ -114,26 +98,23 @@
 }
 
 $widthpoints: (
-  "-max": max-width,
-  "-min": min-width,
-  "": width
+  '-max': max-width,
+  '-min': min-width,
+  '': width,
 );
 
 $sizes: 25, 50, 75, 100;
 
 @each $value, $label in $widthpoints {
   @each $size in $sizes {
-
     .vw#{$value}-#{$size} {
       #{$label}: #{$size}vw;
     }
   }
 }
 
-@media (max-width:768px) {
-
+@media (max-width: 768px) {
   #user {
-
     .border-bottom {
       border-bottom: 1px solid $border;
     }

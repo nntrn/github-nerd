@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './components/ui/Form'
 import User from './components/User'
 import Events from './components/Events'
-import BarChart from './components/BarChart'
+// import BarChart from './components/BarChart'
 
 import { DataOutput } from './components/DataViewer'
 
@@ -23,15 +23,15 @@ export default function App(props) {
 
   return (
     <div>
-      <Form input={{ user: { value: user, type: 'text' } }} />
+      <Form input={{ user: { value: user, type: 'text' }}} />
       <User user={user} />
 
       <DataOutput
         user={user}
         api="starred"
         query={{ per_page: 100, sort: 'updated' }}
-        columns={['full_name', 'html_url', 'description', 'language', 'created_at', 'updated_at']}
-        title="starred repos"
+        columns={['full_name', 'html_url', 'description', 'language', 'updated_at']}
+        title="Starred repos"
         groupBy="language"
       />
       <DataOutput
@@ -42,8 +42,7 @@ export default function App(props) {
         title="user repos"
         groupBy="has_issues"
       />
-      {/* TODO: refactor events  */}
-      <Events user={user} api="events" query={{ per_page: 100, sort: 'updated' }} />
+
     </div>
   )
 }

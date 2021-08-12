@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 html {
   height: 100%;
@@ -31,4 +31,10 @@ a {
 
 div:empty {
   display: none;
+}
+
+.number-label {
+  color: $gray-dark;
+  font-size: 70%;
+  margin: auto;
 }
